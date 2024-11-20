@@ -31,10 +31,10 @@ When we connect to challenge server, it deploys the vulnerable contract on a pri
 
 Below is a brief description of these 4 options.
 
-1. uuid: a unique identifier used to indicate our challenge instance
-2. rpc endpoint: this is the private RPC URL used to connect to the private blockchain
-3. private key: This is the private key of the account provided to us to interact with the blockchain. It is loaded with some balance to use for the gas fee
-4. setup contract: this is the address of the deployer contract
+1. **uuid**: a unique identifier used to indicate our challenge instance
+2. **rpc endpoint**: this is the private RPC URL used to connect to the private blockchain
+3. **private key**: This is the private key of the account provided to us to interact with the blockchain. It is loaded with some balance to use for the gas fee
+4. **setup contract**: this is the address of the deployer contract
 
 There are two main steps to solve this challenge
 - Leaking the vulnerable contract address
@@ -76,7 +76,7 @@ Once we have solved it, we just need to connect to the challenge server, submit 
 Flag: X-MAS{beginooor}
 
 ## Solution code
-```
+```python
 import web3
 import time
 
