@@ -2,7 +2,7 @@
 
 Recently, I participated in the X-MAS 2022 CTF in my free time. There was an interesting blockchain related challenge. In this challenge, we were provided the source code of a vulnerable Solidity smart contract. The goal is to exploit the vulnerability and get the flag
 
-Figure 1 below shows the source code of the contract
+The image below shows the source code of the contract
 
 ![1.png](images/1.png "1.png")
 
