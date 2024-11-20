@@ -65,7 +65,7 @@ So, to solve the challenge, I ran a loop for a maximum of 100 iterations. In eac
 
 Also, in the vulnerable contract source code, we can see that the value of state variable solved would be set to true if the challenge is solved. By checking for this value, we can confirm when the challenge is solved
 
-Figure 3 below shows my script solving it:
+The image below shows my script solving it:
 
 ![3.png](images/3.png "3.png")
 
