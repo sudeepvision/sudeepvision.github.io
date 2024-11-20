@@ -4,7 +4,7 @@ Recently, in my free time I participated in the [INTENT CTF](https://intentsummi
 
 Among all the challenges I solved, one of them stood out to me because it was a blockchain related challenge. It was refreshing to see a challenge in CTF related to blockchains. In this writeup, I'll discuss how I solved the challenge and also few comments about how I think this challenge could have been made a bit more difficult.
 
-To begin with, we are given a smart contract address and the goal is to discover the flag.
+To begin with, we are given an Ethereum smart contract address and the goal is to discover the flag.
 
 Contract address: `0x046ca747d8472d2f8c070655aed06b841215d4b3`
 
@@ -52,7 +52,7 @@ The return statement in the check() function passes these 10 characters of the f
 
 There are two ways to identify all the verifier contract addresses. One of them is more straightforward and works well for this challenge. Another method can even help solve the challenge if it were made more difficult too.
 
-#### Method 1:
+#### Method 1
 
 Per initial analysis of the contract, we know that the EOA with address: `0x9ddf5b332cd24d62807b3e2e7362792897fc387c` was used to create the CheckFlag contract. We can look at the transaction history of this address and see which other contracts were created by it.
 
@@ -62,7 +62,7 @@ Based on this, we can see that this address created several other contracts, nam
 
 For this challenge, the contracts were named appropriately as each contract was used to decipher one byte of the flag. So, one could analyse the code of all these contracts one by one.
 
-#### Method 2:
+#### Method 2
 
 While Method #1 works well, we can use another method to discover the addresses of each of the verifier contracts.
 
@@ -128,7 +128,7 @@ _Note_: This same value can also be fetched by looking at the storage slots in t
 
 flag[1] = "4"
 
-### Flag[2]:
+### Flag[2]
 
 Contract code: https://etherscan.io/address/0xaad84ecad496f819f20f06dd6ec34b8d2de270cc#code
 
@@ -344,6 +344,8 @@ flag[9] = '5'
 
 Putting all this together, the flag is: INTENT{r4bitc0in5}
 
-Overall this challenge was fun. It requires understanding of few important concepts in Solidity which are important from security point of view as well. Concepts such as delegatecall, integer overflow are very important to understand when auditing Solidity code of smart contracts
+## Conclusion
+
+Overall this challenge was fun. It requires understanding of few concepts in Solidity which are important from security point of view as well. Concepts such as delegatecall, integer overflow are very important to understand when auditing Solidity code of smart contracts
 
 Sudeep Singh
