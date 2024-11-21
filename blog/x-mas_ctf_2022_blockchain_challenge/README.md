@@ -1,3 +1,5 @@
+# X-MAS CTF 2022 - Blockchain challenge write up
+
 ## Summary
 
 Recently, I participated in the X-MAS 2022 CTF in my free time. There was an interesting blockchain related challenge. In this challenge, we were provided the source code of a vulnerable Solidity smart contract. The goal is to exploit the vulnerability and get the flag
