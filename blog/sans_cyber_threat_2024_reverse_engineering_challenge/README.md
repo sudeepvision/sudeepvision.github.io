@@ -1,8 +1,8 @@
-## Cyber Threat 2024 Disassembly Dilemma challenge solution
+## SANS Cyber Threat 2024 Disassembly Dilemma challenge solution
 
 | Challenge name | Disassembly Dilemma |
 | --- | --- |
-| Author | Sudeep Singh |
+| Solution author | Sudeep Singh |
 | Category | Reverse engineering |
 
 ## Summary
