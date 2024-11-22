@@ -7,7 +7,7 @@
 
 ## Summary
 
-Disassembly dilemma was one of the challenges prepared by SANS for their upcoming Cyber Threat 2024 conference. SANS Cyber Threat website categorized this challenge as "hard" and they offered a 75% discount for the Cyber Threat 2024 conference ticket to anyone who solved this challenge.
+Disassembly dilemma was one of the challenges prepared by SANS for their upcoming Cyber Threat 2024 conference. SANS Cyber Threat [website](https://cyberthreat.io/#challenges) categorized this challenge as "hard" and they offered a 75% discount for the Cyber Threat 2024 conference ticket to anyone who solved this challenge.
 
 ![1.png](images/1.png "1.png")
 
