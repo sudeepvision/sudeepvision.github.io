@@ -1,3 +1,3 @@
 # sudeepvision.github.io
 
-- [Blogs](/blog)
+- [Blog](/blog)
