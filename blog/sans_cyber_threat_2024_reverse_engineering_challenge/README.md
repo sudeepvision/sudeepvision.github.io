@@ -3,7 +3,6 @@
 | Challenge name | Disassembly Dilemma |
 | --- | --- |
 | Author | Sudeep Singh |
-| Email address | sudeep.singh@zscaler.com |
 | Category | Reverse engineering |
 
 ## Summary
@@ -14,12 +13,12 @@ Disassembly dilemma was one of the challenges prepared by SANS for their upcomin
 
 In this challenge, we are provided a Windows 32-bit binary that accepts a key as an input. The goal of this challenge is to retrieve the flag by providing correct input to the binary.
 
-| Download link | https://cyberthreat.io/challenges/c4-challenge.zip |
-| --- | --- |
-| MD5 hash | 0746eb07adaedd7375ed649083c665ab |
-| SHA1 hash | 43245701da2cd7756eb90d39210bcf934fc17bfe |
-| SHA256 hash | 88cd41ad4454df977bf565153ca1b2bd0af8927da356e5d9df02896e81f8afad |
-| Filename | ct24.exe |
+- **Download link**: https://cyberthreat.io/challenges/c4-challenge.zip
+
+- MD5 hash: 0746eb07adaedd7375ed649083c665ab
+- SHA1 hash: 43245701da2cd7756eb90d39210bcf934fc17bfe
+- SHA256 hash: 88cd41ad4454df977bf565153ca1b2bd0af8927da356e5d9df02896e81f8afad
+- Filename: ct24.exe
 
 ## Solution 
 
@@ -45,15 +44,15 @@ The image below shows an example of the anti-disassembly.
 
 ![4.png](images/4.png "4.png")
 
-In the above code section, the CALL instruction at address: 004011E3 transfers the control to the address 4011EA+1; however disassemblers like IDA Pro will disassemble the bytes at address 4011EA resulting in incorrect disassembly. This is achieved by adding the opcode for PUSH instruction (0x68) after the CALL instruction and before the CALL target address. Since IDA Pro recognises 0x68 as a valid opcode for the PUSH instruction, it begins disassembling there instead of beginning disassembling at the CALL target address.
+In the above code section, the CALL instruction at address: `004011E3` transfers the control to the address `4011EA+1`; however disassemblers like IDA Pro will disassemble the bytes at address `4011EA` resulting in incorrect disassembly. This is achieved by adding the opcode for PUSH instruction (0x68) after the CALL instruction and before the CALL target address. Since IDA Pro recognises 0x68 as a valid opcode for the PUSH instruction, it begins disassembling there instead of beginning disassembling at the CALL target address.
 
 This same technique is used in multiple locations in the binary. I fixed all these code sections in IDA Pro to make the analysis more easy.
 
-A quick way to fix the disassembly would be to first tell IDA Pro to interpret the bytes at address 4011EA as data instead of code. Then tell IDA pro to interpret the bytes at address 4011EA+1 as code. After applying this logic to the above code section, we can see the correct disassembly as shown in the image below.
+A quick way to fix the disassembly would be to first tell IDA Pro to interpret the bytes at address `4011EA` as data instead of code. Then tell IDA pro to interpret the bytes at address `4011EA+1` as code. After applying this logic to the above code section, we can see the correct disassembly as shown in the image below.
 
 ![5.png](images/5.png "5.png")
 
-We can now see the correct disassembled code at address 4011EB however we can again see the same anti-disassembly technique applied at address 4011EE. In order to get the correct disassembled code, the first step should be to fix all these code sections and then analyze the code to see how it processes the input.
+We can now see the correct disassembled code at address `4011EB` however we can again see the same anti-disassembly technique applied at address `4011EE`. In order to get the correct disassembled code, the first step should be to fix all these code sections and then analyze the code to see how it processes the input.
 
 ## Identifying the constraints
 
@@ -119,8 +118,8 @@ There are multiple possible inputs that satisfy the above constraints. I used th
 
 ![solution.png](images/solution.png "solution.png")
 
-*Input*: m@0b-1?@F-?@2P-1@?1
-*Flag*: CT24{N0nsense4ss3mlyInstruction}
+- **Input**: m@0b-1?@F-?@2P-1@?1
+- **Flag**: CT24{N0nsense4ss3mlyInstruction}
 
 ## Solution script
 
