@@ -1,3 +1,10 @@
+# Glacier CTF 2024 - Ramo reverse engineering challenge write up
+
+| Challenge name | Ramo |
+|--|--|
+| Solution author | Sudeep Singh |
+| Category | Reverse engineering |
+
 In this challenge, we are given a 64-bit Windows binary and a file called `flag.txt.enc` that contains the encrypted flag. Goal of this challenge is to decrypt the `flag.txt.enc` file and obtain the flag.
 
 ## Contents
