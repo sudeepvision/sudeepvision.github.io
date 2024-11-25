@@ -9,6 +9,8 @@
 
 In this challenge, we are given a 64-bit Windows binary and a file called `flag.txt.enc` that contains the encrypted flag. Goal of this challenge is to decrypt the `flag.txt.enc` file and obtain the flag.
 
+You can download the challenge from [here](/challenge/ramo.tar.gz)
+
 ## Contents
 - Initial analysis
 - Generation of seed
