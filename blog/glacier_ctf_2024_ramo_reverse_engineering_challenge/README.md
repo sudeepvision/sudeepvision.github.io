@@ -11,11 +11,6 @@ In this challenge, we are given a 64-bit Windows binary and a file called `flag.
 
 You can download the challenge from [here](https://github.com/sudeepvision/sudeepvision.github.io/blob/main/blog/glacier_ctf_2024_ramo_reverse_engineering_challenge/challenge/ramo.tar.gz)
 
-- MD5 hash: 4e55ed86c30af2eb6784a9c9b42b3a8e
-- SHA1 hash - 1866ad019135d83518a9cab1d65f721d505f1698
-- SHA256 hash - 98febafff2da71971bcd72796c1da6c7f2f01bdb2053da9c334fa02308ee7c00
-- Filename - Ramo.exe
-
 ## Contents
 - Initial analysis
 - Generation of seed
