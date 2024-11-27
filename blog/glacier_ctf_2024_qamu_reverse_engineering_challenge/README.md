@@ -9,7 +9,7 @@
 
 Recently in Glacier CTF 2024, there was an interesting challenge called "qamu".
 
-You can download the challenge from [here]()
+You can download the challenge from [here](https://github.com/sudeepvision/sudeepvision.github.io/blob/main/blog/glacier_ctf_2024_qamu_reverse_engineering_challenge/qamu.tar.gz)
 
 ## Contents
 - Initial analysis
