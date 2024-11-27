@@ -153,7 +153,7 @@ I have included the complete script in the "Solution script" section. It will au
 
 ![5.png](images/5.png "5.png")
 
-**License key**: `AHMPQ-30009-AABJW-qkjhh:`\xbcK\xc5am\xc0\x16` 
+**License key**: `AHMPQ-30009-AABJW-qkjhh:\x60\xbcK\xc5am\xc0\x16` 
 
 ## Solution script
 
