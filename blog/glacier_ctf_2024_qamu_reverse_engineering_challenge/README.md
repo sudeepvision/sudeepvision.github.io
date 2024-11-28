@@ -22,7 +22,7 @@ You can download the challenge from [here](https://github.com/sudeepvision/sudee
 - Re-encryption of code
 - Dumping the decrypted program
 - Analysis of decrypted program
-- Solving for constraints
+	- Solving for constraints
 
 ## Initial analysis
 
@@ -159,6 +159,8 @@ key[11] == '-'
 key[17] == '-'
 key[23] == ':'
 ```
+
+### Solving for constraints
 
 There are many constraints in this program, so manually extracting all the constraints and using it with an SMT solver like Z3 will not be an efficient solution. Instead using a symbolic execution engine like Angr will be suitable for this case.
 
