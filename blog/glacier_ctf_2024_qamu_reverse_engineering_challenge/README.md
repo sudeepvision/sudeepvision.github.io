@@ -315,7 +315,7 @@ if __name__ == "__main__":
     solve()
 ```
 
-### Disassembled program
+### Disassembly of decrypted bytecode
 
 ```asm
 push	r14
