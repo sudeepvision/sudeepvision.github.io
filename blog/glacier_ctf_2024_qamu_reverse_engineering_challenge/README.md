@@ -7,7 +7,7 @@
 
 ## Summary
 
-Recently in Glacier CTF 2024, there was an interesting challenge called "qamu".
+Recently in Glacier CTF 2024, there was an interesting challenge called "qamu". This challenge simulates confidential computing in a hypervisor that executes a program in a VM.
 
 You can download the challenge from [here](https://github.com/sudeepvision/sudeepvision.github.io/blob/main/blog/glacier_ctf_2024_qamu_reverse_engineering_challenge/qamu.tar.gz)
 
@@ -54,13 +54,30 @@ Now the binary prompts for the license key. It reads 0x20 bytes from stdin. So, 
 
 ## VM execution
 
-The subroutine at address: `0x40175A` is the main function that handles the VM execution. It iterates over the memory mapped data at address: 0x70000000 and executes in the same sequence as the offsets mentioned in the offsets array.
+The subroutine at address: `0x40175A` is the main function that handles the VM execution. Before we analyse this subroutine, it is worth noting that upon return from VM execution, the main function checks whether the value at memory address: `0x50000000` is 0 or not. If the value is non-zero, then the main function reads the flag.txt file and displays the flag.
+
+```
+.text:0000000000401C9D                 mov     eax, 0
+.text:0000000000401CA2                 call    sub_40175A
+.text:0000000000401CA7                 mov     eax, 50000000h
+.text:0000000000401CAC                 mov     rax, [rax]
+.text:0000000000401CAF                 test    rax, rax
+.text:0000000000401CB2                 jz      loc_401D55
+.text:0000000000401CB8                 mov     edi, offset aValid ; "valid"
+.text:0000000000401CBD                 call    _puts
+.text:0000000000401CC2                 mov     esi, offset aR  ; "r"
+.text:0000000000401CC7                 mov     edi, offset aFlagTxt ; "flag.txt"
+.text:0000000000401CCC                 call    _fopen
+.text:0000000000401CD1                 mov     [rbp+var_138], rax
+```
+
+It iterates over the memory mapped data at address: 0x70000000 and executes in the same sequence as the offsets mentioned in the offsets array.
 
 The previous mapped memory regions are used to preserve the state of the host program (aka hypervisor in this case) and the guest program (the VM in this case).
 
-- Before executing the VM, it saves the state of all the registers in the memory region: 0x40000000
-- After execution of the VM, it saves the state of VM registers in the memory region: 0x50000000
-- The address: 0x60000000 only stores the pointer to the next memory region to be executed
+- Before executing the VM, it saves the state of all the hypervisor registers in the memory region: `0x40000000`
+- After execution of the VM, it saves the state of VM registers in the memory region: `0x50000000`
+- The address: `0x60000000` only stores the pointer to the next memory region to be executed
 
 Relevant code section is shown below.
 
@@ -94,7 +111,7 @@ jmp r15
 <invalid ASM instructions>
 ```
 
-The `jmp r15` instruction passes the control back to `0x4018BB`.
+The `jmp r15` instruction passes the control back to `0x4018BB`. Once the control is transferred back to `0x4018BB`, we can see that the value of `rax` is saved in `0x50000000` which as we observed earlier should not be 0 to read the flag.txt contents.
 
 ## Re-encryption of code
 
@@ -153,7 +170,13 @@ I have included the complete script in the "Solution script" section. It will au
 
 ![5.png](images/5.png "5.png")
 
-**License key**: `AHMPQ-30009-AABJW-qkjhh:\x60\xbcK\xc5am\xc0\x16` 
+**License key**: `AHMPQ-30009-AABJW-qkjhh:\x60\xbcK\xc5am\xc0\x16`
+
+Now this license key needs to be sent as an input to the program to read the correct flag.
+
+## Acknowledgements
+
+I would like to thank `Ik0ri4n` and `itskarudo` for their discussion and ideas to solve this challenge.
 
 ## Solution script
 
