@@ -96,7 +96,7 @@ Analysis of this subroutine reveals the below
 1. It constructs a 32-byte decryption key that is passed to the subroutine at address: `0x4012D6` along with the address of encrypted memory region
 2. The first 8 bytes of the decryption key are the same as the address of encrypted data.
 
-Decryption key: <8 bytes address of memory region> + b"\x25\xfa\x5b\xc3\x52\xa7\x88\xd5\x5c\x15\xff\x16\xe0\xac\x36\x2a\xe0\xd1\x37\x40\x59\x83\x7d\x55"
+`Decryption key: <8 bytes address of memory region> + b"\x25\xfa\x5b\xc3\x52\xa7\x88\xd5\x5c\x15\xff\x16\xe0\xac\x36\x2a\xe0\xd1\x37\x40\x59\x83\x7d\x55"`
 3. Analysis of the subroutine at address: `0x4012D6` reveals that it is an RC4 cipher. This is where the knowledge of identifying cryptographic primitives is useful. The RC4 algorithm in this case is implemented without leveraging any third party libraries.
 4. After decryption, the memory region is marked as executable by calling `mprotect()`
 
