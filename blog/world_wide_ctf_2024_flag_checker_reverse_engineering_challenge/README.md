@@ -53,6 +53,8 @@ We can open the binary in CFF explorer and browse the encrypted resource. Since 
 
 The image below shows the 16-byte decryption key located this way. Now we just need to use this 16-byte XOR key to decrypt the resource.
 
+XOR key: `\x0f\x4d\x0d\xb3\x66\x8d\xd5\x8c\xab\xb9\xeb\x40\x96\x57\xea\xa8`
+
 ![4.png](images/4.png "4.png")
 
 ### Method 2
@@ -102,6 +104,8 @@ for i in range(0x20, 0x7f):
 		break
 
 ```
+
+Bruteforcing this, we find that the value of the 4-character input is: `FLAG`
 
 ## Usage of named pipe for flag validation
 
