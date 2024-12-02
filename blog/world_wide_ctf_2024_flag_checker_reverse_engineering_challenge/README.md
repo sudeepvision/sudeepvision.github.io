@@ -59,7 +59,7 @@ The image below shows the 16-byte decryption key located this way. Now we just n
 
 In the second method, we can use the more conventional bruteforce approach. We will try all combinations of strings of length 4 containing ASCII characters, that result in a decrypted resource corresponding to a Windows binary. Since all Windows binaries have an MZ header, we will compare each decrypted result with the first 4 bytes of the MZ header to see if we found the correct input.
 
-```
+```python
 import hashlib
 
 _input = ""
@@ -144,7 +144,7 @@ Code section below shows the comparison.
 
 In order to decrypt the flag, we can use the AES key and AES IV along with the encrypted bytes at address `rbp+4F0h+Buf2` to retrieve the original flag.
 
-```
+```python
 from Crypto.Cipher import AES
 
 key = "REVERSE ENGINEER".encode()
