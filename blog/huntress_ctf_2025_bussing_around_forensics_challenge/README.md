@@ -31,8 +31,8 @@ Each packet has a transaction identifier which increments sequentially and is us
 The most interesting information here is the value of the register.
 
 There are two key Modbus operations captured in the PCAP
-	- Write Single Register (func code: 6)
-	- Write Single Coil (func code: 5)
+- Write Single Register (func code: 6)
+- Write Single Coil (func code: 5)
 	
 We are specifically interested in Write Single Register operations since the register value changes across packets.
 
