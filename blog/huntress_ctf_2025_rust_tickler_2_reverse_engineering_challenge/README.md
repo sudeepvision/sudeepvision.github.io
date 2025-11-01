@@ -1,3 +1,5 @@
+# Huntress CTF 2025 - Rust Tickler 2 reverse engineering challenge write up
+
 ### Overview
 
 | Challenge name | Rust tickler 2 |
@@ -73,7 +75,7 @@ This decryption algorithm uses LCG and the seed for this LCG is also fetched fro
 
 So I wrote the below code to parse the blob and decrypt all the 13 strings
 
-```
+```python
 #!/usr/bin/env python3
 import struct
 import sys
