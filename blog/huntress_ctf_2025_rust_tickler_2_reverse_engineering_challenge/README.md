@@ -1,5 +1,10 @@
 ### Overview
 
+| Challenge name | Rust tickler 2 |
+| --- | --- |
+| Solution author | Sudeep Singh |
+| Category | Reverse engineering |
+
 ![Cover](images/rust_tickler2.png "Cover") 
 
 In this challenge, we are provided a 64-bit Rust-based binary. This binary decrypts an encrypted blob at runtime and this blob contains an encrypted string table which is further decrypted at runtime using an LCG-based decryption algorithm.
