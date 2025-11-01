@@ -53,13 +53,15 @@ We can open the binary in CFF explorer and browse the encrypted resource. Since 
 
 The image below shows the 16-byte decryption key located this way. Now we just need to use this 16-byte XOR key to decrypt the resource.
 
+XOR key: `\x0f\x4d\x0d\xb3\x66\x8d\xd5\x8c\xab\xb9\xeb\x40\x96\x57\xea\xa8`
+
 ![4.png](images/4.png "4.png")
 
 ### Method 2
 
 In the second method, we can use the more conventional bruteforce approach. We will try all combinations of strings of length 4 containing ASCII characters, that result in a decrypted resource corresponding to a Windows binary. Since all Windows binaries have an MZ header, we will compare each decrypted result with the first 4 bytes of the MZ header to see if we found the correct input.
 
-```
+```python
 import hashlib
 
 _input = ""
@@ -103,6 +105,8 @@ for i in range(0x20, 0x7f):
 
 ```
 
+Bruteforcing this, we find that the value of the 4-character input is: `FLAG`
+
 ## Usage of named pipe for flag validation
 
 Now that we have successfully decrypted the resource, let's continue analysing the main function in the original binary to see how it validates the flag.
@@ -144,7 +148,7 @@ Code section below shows the comparison.
 
 In order to decrypt the flag, we can use the AES key and AES IV along with the encrypted bytes at address `rbp+4F0h+Buf2` to retrieve the original flag.
 
-```
+```python
 from Crypto.Cipher import AES
 
 key = "REVERSE ENGINEER".encode()
