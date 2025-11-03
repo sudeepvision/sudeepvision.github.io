@@ -85,11 +85,11 @@ User Comment                    : Prime Modulus: 0100000000000000000000000000000
 
 This value is the same as `2 ** 256 + 297` which is a large prime number.
 
-Each shared secret can be represented as a point (x,y) and we need to find a polynomial corresponding to these points. By solving for f(x) at x = 0, we can find the secret. In order to find the polynomial, we will use Lagrange interpolation plot. It is also important to note that we will do all the calculations over GF(p) where is the p is the prime modulus.
+Each shared secret can be represented as a point (x,y) and we need to find a polynomial corresponding to these points. By solving for f(x) at x = 0, we can find the secret. In order to find the polynomial, we will use Lagrange interpolation plot. It is also important to note that we will do all the calculations over GF(p) where p is the prime modulus.
 
 I wrote the below code to reconstruct the secret using Lagrange interpolation plot. Since we don't know the threshold required to reconstruct the secret, we will try various thresholds.
 
-```
+```python
 import sys
 
 SHARES_FILENAME = "user_comments.txt"
@@ -211,7 +211,7 @@ MeowMeow;MeowMeowMeowMeowMeowMeowMeowMeowMeowMeowMeowMeowMeowMeowMeowMeowMeowMeo
 
 We can use the below code to decode the above encoded data. It will count the number of instances of "Meow" in every semicolon delimited segment.
 
-```
+```python
 data = open("cute-kitty-noises.txt", "r").read()
 
 segments = [seg.strip() for seg in data.split(';') if seg.strip()]
