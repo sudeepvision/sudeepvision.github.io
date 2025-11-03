@@ -28,6 +28,8 @@ Below are the contents of this archive file.
     └── prime_mod.jpg
 ```
 
+The `flag.zip` archive file is password-protected.
+
 ### Analysis
 
 The directory, "Cat Archive" contains 457 images. By checking the metadata of these image files, we observe that each image has a SHA256 hash embedded in the "User Comment" field as shown below.
