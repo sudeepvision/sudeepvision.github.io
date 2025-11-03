@@ -13,6 +13,8 @@ In this challenge, we are provided a PCAP file that captured traffic over Modbus
 
 Our goal in this challenge is to retrieve the flag.
 
+You can download the PCAP file related to this challenge from [here](https://github.com/sudeepvision/sudeepvision.github.io/blob/main/blog/huntress_ctf_2025/huntress_ctf_2025_bussing_around_forensics_challenge/challenge/bussing_around.pcapng)
+
 ### Analysis
 
 We begin by quickly checking the conversation statistics and observe the following:

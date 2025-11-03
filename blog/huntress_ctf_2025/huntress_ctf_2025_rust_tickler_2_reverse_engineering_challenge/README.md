@@ -9,6 +9,8 @@
 
 ![Cover](images/rust_tickler2.png "Cover") 
 
+You can download the binary related to this challenge from [here](https://github.com/sudeepvision/sudeepvision.github.io/blob/main/blog/huntress_ctf_2025/huntress_ctf_2025_rust_tickler_2_reverse_engineering_challenge/challenge/rust-tickler-2.7z)
+
 In this challenge, we are provided a 64-bit Rust-based binary. This binary decrypts an encrypted blob at runtime and this blob contains an encrypted string table which is further decrypted at runtime using an LCG-based decryption algorithm.
 
 One of the strings in the encrypted string table is related to the flag.
