@@ -42,10 +42,12 @@ Below is a description of the blob structure.
 
 Below is description of the structure corresponding to each encrypted string
 
-1. First 4 bytes are the marker used to locate the structure on the heap.
-2. Next 4 bytes are the offset to find the encrypted string.
-3. Next 4 bytes is later used as a seed in the Linear Congruential Generator (LCG) decryption algorithm.
-4. Next 4 bytes are the length of the encrypted string.
+| Offset | Size | Description |
+| --- | --- | --- |
+| 0 | 4 | Marker used to locate the structure on the heap |
+| 4 | 4 | Offset to find the encrypted string in the blob |
+| 8 | 4 | Seed in the Linear Congruential Generator (LCG) decryption algorithm |
+| 12 | 4 | Length of the encrypted string |
 
 We can represent this entire blob structure as below.
 
@@ -143,7 +145,7 @@ Below is the output of above code
 
 As we can see, the flag is stored at index 3 in the string table.
 
-Flag is: flag{f59a5f604d236425490133c3fac89a88}
+Flag is: `flag{f59a5f604d236425490133c3fac89a88}`
 
 
 

@@ -90,7 +90,7 @@ The output is a password-protected ZIP archive and the password is mentioned in 
 
 Once we extract the contents of the password-protected archive, we get the flag inside flag.txt file
 
-flag is: flag{4d2a66c5ed8bb8cd4e4e1ab32c71f7a3}
+flag is: `flag{4d2a66c5ed8bb8cd4e4e1ab32c71f7a3}`
 
 
 
