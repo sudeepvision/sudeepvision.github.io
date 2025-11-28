@@ -91,7 +91,7 @@ decryption_key[i] = error_code[i] + 47
 ```
 To quickly solve this challenge, I patched the binary to remove the anti-debugging checks and then set a breakpoint at the return address (0x42E8), each time these subroutines were invoked as shown below.
 
-```
+```asm
 .text:00000000000042CD
 .text:00000000000042CD loc_42CD:                               ; CODE XREF: main+3BF↓j
 .text:00000000000042CD                 mov     rax, [rbp+var_68]
@@ -115,7 +115,7 @@ errno_seq = [2,10,6,1,2,3,4,7,6,5,8,9,2,4,7,6,10,9,8,5,6,7,4,3,2,1,4,3]
 
 The encrypted flag is stored in the .rodata section at 0x4AC40 and the flag decryption subroutine is below
 
-```
+```C
 __int64 __fastcall sub_4ABE(__int64 a1, __int64 encrypted_flag, __int64 license_key)
 {
   char v3; // bl
@@ -134,7 +134,7 @@ __int64 __fastcall sub_4ABE(__int64 a1, __int64 encrypted_flag, __int64 license_
 ```
 
 Now we can decrypt the flag as shown below
-```
+```python
 encoded = [
     0x79,0x6D,0x77,0x4B,0x01,0x50,0x55,0x63,
     0x46,0x77,0x77,0x4C,0x00,0x03,0x58,0x6A,
