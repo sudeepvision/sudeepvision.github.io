@@ -5,7 +5,7 @@
 | Challenge name | Codex of Failures |
 | --- | --- |
 | Solution author | Sudeep Singh |
-| Category | Forensics |
+| Category | Reverse engineering |
 
 In this challenge, we are provided a Linux 64-bit ELF binary which expects a key as an input, decrypts the flag at runtime and prints the flag. We have to find the correct decryption key in order to reveal the decrypted flag.
 
