@@ -11,3 +11,4 @@
 - [Huntress CTF 2025 - Bussing Around Forensics challenge write up](huntress_ctf_2025/huntress_ctf_2025_bussing_around_forensics_challenge/)
 - [Huntress CTF 2025 - Telestealer Malware challenge write up](huntress_ctf_2025/huntress_ctf_2025_telestealer_malware_challenge/)
 - [Huntress CTF 2025 - Vx-underground Miscellenaous challenge write up](huntress_ctf_2025/huntress_ctf_2025_vx_underground_miscellaneous_challenge/)
+- [Neurogrid CTF 2025 - Resurrection Forensics write up](neurogrid_ctf_2025/neurogrid_ctf_2025_resurrection_forensics_challenge/)
