@@ -102,63 +102,43 @@ The output of GoReSym shows the below dependencies.
         "Deps": [
             {
                 "Path": "github.com/gen2brain/shm",
-                "Version": "v0.1.1",
-                "Sum": "h1:1cTVA5qcsUFixnDHl14TmRoxgfWEEZlTezpUj1vm5uQ=",
-                "Replace": null
+		...
             },
             {
                 "Path": "github.com/godbus/dbus/v5",
-                "Version": "v5.1.0",
-                "Sum": "h1:4KLkAxT3aOY8Li4FRJe/KvhoNFFxo0m6fNuFUO8QJUk=",
-                "Replace": null
+		...
             },
             {
                 "Path": "github.com/jezek/xgb",
-                "Version": "v1.1.1",
-                "Sum": "h1:bE/r8ZZtSv7l9gk6nU0mYx51aXrvnyb44892TwSaqS4=",
-                "Replace": null
+		...
             },
             {
                 "Path": "github.com/kbinani/screenshot",
-                "Version": "v0.0.0-20250118074034-a3924b7bbc8c",
-                "Sum": "h1:1IlzDla/ZATV/FsRn1ETf7ir91PHS2mrd4VMunEtd9k=",
-                "Replace": null
+		...
             },
             {
                 "Path": "github.com/shirou/gopsutil/v4",
-                "Version": "v4.25.3",
-                "Sum": "h1:SeA68lsu8gLggyMbmCn8cmp97V1TI9ld9sVzAUcKcKE=",
-                "Replace": null
+		...
             },
             {
                 "Path": "github.com/tklauser/go-sysconf",
-                "Version": "v0.3.15",
-                "Sum": "h1:VE89k0criAymJ/Os65CSn1IXaol+1wrsFHEB8Ol49K4=",
-                "Replace": null
+		...
             },
             {
                 "Path": "github.com/tklauser/numcpus",
-                "Version": "v0.10.0",
-                "Sum": "h1:18njr6LDBk1zuna922MgdjQuJFjrdppsZG60sHGfjso=",
-                "Replace": null
+		...
             },
             {
                 "Path": "github.com/vmihailenco/msgpack/v5",
-                "Version": "v5.4.1",
-                "Sum": "h1:cQriyiUvjTwOHg8QZaPihLWeRAAVoCpE00IUPn0Bjt8=",
-                "Replace": null
+		...
             },
             {
                 "Path": "github.com/vmihailenco/tagparser/v2",
-                "Version": "v2.0.0",
-                "Sum": "h1:y09buUbR+b5aycVFQs/g70pqKVZNBmxwAhO7/IwNM9g=",
-                "Replace": null
+		...
             },
             {
                 "Path": "golang.org/x/sys",
-                "Version": "v0.32.0",
-                "Sum": "h1:s77OFDvIQeibCmezSnk/q6iAfkdiQaJi4VzroCFrN20=",
-                "Replace": null
+		...
             }
         ],
 ```
