@@ -7,15 +7,18 @@
 
 In this challenge, we were provided a Windows machine memory dump and a VSS snapshot.
 
-We had to answer the below questions
+```
+$ tree
+.
+├── image.001
+└── memory.raw
 
-1. When was the private communications application installed? Provide the exact installation timestamp in UTC (YYYY-MM-DD HH:MM:SS).
-2. It seems Khalid took steps to cover his tracks. A forensic review of the system reveals he used a tool specifically designed to erase digital evidence. What tool did he use?
-3. Investigators located a previous system snapshot of Khalid's machine, preserving data before his deletion attempt. When was this snapshot saved? Provide the exact timestamp in UTC.
-4. What is the meeting ID for Khalid's meeting?
-5. How long did Khalid remain in the meeting? Provide the duration in seconds.
+1 directory, 2 files
+```
 
-At the time of the competition, I solved 3/5 questions. For the two remaining questions, I figured out how to solve later. These two questions remained unsolved by most of the teams. I will also discuss why it was difficult because it involved a particular limitation in forensics tools like volatility3 and MemProcFs.
+We had to answer 5 questions based on the provided evidence.
+
+At the time of the competition, I solved 3/5 questions. For the two remaining questions, I figured out how to solve later. These two questions remained unsolved by most of the teams. I will also discuss why it was difficult to answer one of the questions because it involved a particular limitation in forensics tools like volatility3 and MemProcFs.
 
 ### Initial analysis
 
@@ -141,8 +144,7 @@ drwxrwxrwx 1 root root      0 Dec 17  2024  ZoomAppIcon
 -rwxrwxrwx 1 root root    460 Mar  6  2025  Zoom.us.ini
 ```
 
-zoomus.enc.db -> encrypted SQLite database
-Zoom.us.ini contains the decryption key as shown below.
+zoomus.enc.db is the encrypted SQLite database. The file, Zoom.us.ini contains the decryption key as shown below.
 
 ```
 └─$ cat /mnt/shadow1/Users/a1l4m/AppData/Roaming/Zoom/data/Zoom.us.ini
@@ -323,9 +325,7 @@ b'D4QQYTfjRbCBi8IGxZgew78m+NVlO/5XXCtmyANdAWc='
 
 Now we can open the encrypted SQLite DB, zoom.enc.db with SQLite Cipher and use the above Base64-encoded key to decrypt it. The meeting ID is stored encrypted in the zoom_kv table as shown below.
 
-```
 ![1.png](images/1.png "1.png")
-```
 
 ```
 com.zoom.client.saved.meetingid.enc=Xk47KrVoeJZC2bLQCUc1EMKOHzVRPdB6M9jlainfcM2rsrI9fxlxJIeJ2QC95ZZydVSrBfX57DMNyvZ11cw2gLAYac/5wldVpzLyNdbsQvg=
@@ -335,9 +335,7 @@ Meeting id in Zoom database is encrypted using the AES algorithm in CBC mode. Th
 
 We can decrypt as shown below.
 
-```
 ![2.png](images/2.png "2.png")
-```
 
 So the meeting id is: 81909669601
 
