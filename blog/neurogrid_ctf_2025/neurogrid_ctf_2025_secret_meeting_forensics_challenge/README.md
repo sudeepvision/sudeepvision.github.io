@@ -1,3 +1,5 @@
+# Neurogrid CTF 2025 - Secret meeting forensics challenge write up
+
 ### Overview
 
 | Challenge name | Secret meeting |
