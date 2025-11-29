@@ -379,6 +379,6 @@ sqlite>
 ```
 
 The most recent entry gives us
-Start time = 1741274808
-End time = 1741275089
-Duration = 281 seconds
+- Start time = 1741274808
+- End time = 1741275089
+- Duration = 281 seconds
